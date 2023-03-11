@@ -7,7 +7,7 @@ from wordcloud import WordCloud, ImageColorGenerator, STOPWORDS
 #removes unimportant words like (we, i, the, etc)
 stopwords = set(STOPWORDS)
 
-df = pd.read_csv("C:\\Users\\antho\\Documents\\Kaggle Datasets\\Anime\\MALratings.csv")
+df = pd.read_csv("Anime\\MALratings.csv")
 #excludes anime that have non-applicable ranking
 df2 = df[df.Rank != "/A"]
 df2['Rank'] = df2['Rank'].astype(int)
@@ -22,7 +22,7 @@ anime = anime.head(1000)
 text = " ".join(title for title in anime.Title)
 
 #input image file path to use ask your mask for a wordcloud
-color_mask = np.array(Image.open("C:\\Users\\antho\\Downloads\\bocchi.png").convert('RGBA'))
+color_mask = np.array(Image.open("CDownloads\\bocchi.png").convert('RGBA'))
 
 '''
 #use this to transform the background of an image for your wordcloud, only works with simple backgrounds
@@ -52,6 +52,6 @@ plt.imshow(word_cloud.recolor(color_func=image_colors), interpolation='bilinear'
 plt.axis("off")
 #removes empty white borders
 plt.tight_layout(pad=0)
-plt.savefig("C:\\Users\\antho\\Downloads\\GrassNewCloud.png", format="png")
+plt.savefig("Downloads\\BocchiCloud.png", format="png")
 plt.show()
 
