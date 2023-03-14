@@ -42,7 +42,7 @@ plt.figure(figsize=[12.8, 7.2])
 #uses the colors that are found in the image
 plt.imshow(word_cloud.recolor(color_func=image_colors), interpolation='bilinear')
 
-#uses the the default colors, might want to use if the colors are only in the mask image are grey-scale
+#uses the the default colors, might want to use if the colors in the mask image are grey-scale
 #plt.imshow(word_cloud, interpolation='bilinear', aspect="auto")
 
 plt.axis("off")
